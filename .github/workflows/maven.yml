@@ -21,7 +21,7 @@ jobs:
     environment: default
     env:
       SONAR_ORGANIZATION: jrubt
-      SONAR_PROJECT_KEY: se24-assignment2
+      SONAR_PROJECT_KEY: jrubt_se24-assignment2
 
     steps:
       - uses: actions/checkout@v4
