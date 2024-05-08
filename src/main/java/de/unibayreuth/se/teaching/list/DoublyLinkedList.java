@@ -3,7 +3,6 @@ package de.unibayreuth.se.teaching.list;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-//import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
  */
 @Getter
 @Setter
-//@Slf4j
 public class DoublyLinkedList {
     private Element begin;
     private Element end;
