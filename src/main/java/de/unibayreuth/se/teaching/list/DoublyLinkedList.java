@@ -3,7 +3,7 @@ package de.unibayreuth.se.teaching.list;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 @Getter
 @Setter
-@Slf4j
+//@Slf4j
 public class DoublyLinkedList {
     private Element begin;
     private Element end;
@@ -76,9 +76,9 @@ public class DoublyLinkedList {
      * @return Array with list elements (same order)
      */
     public double[] asArray() {
-        double[] array = new double[length+1];
+        double[] array = new double[length];
         Element element = begin;
-        int arrayPos = 1;
+        int arrayPos = 0;
         while (element != null) {
             array[arrayPos] = element.value;
             arrayPos++;
@@ -145,27 +145,6 @@ public class DoublyLinkedList {
                 } else { // If pos is the first element in the list...
                     begin = e;
                 }
-                length++;
-            }
-        }
-    }
-
-    /**
-     * Add an element.
-     * @param e Element to add
-     */
-    public void add(Element e) {
-        if (isEmpty()) { append(e); }
-        else {
-            Element pos = begin; Element pred = null;
-            while (pos != null && pos.getValue() < e.getValue()) {
-                pred = pos; pos = pos.getNext();
-            }
-            if (pos == null) { append(e); }
-            else {
-                e.setNext(pos); pos.setPrev(e);
-                if (pred != null) { e.setPrev(pred); pred.setNext(e); }
-                else { begin = e; }
                 length++;
             }
         }
