@@ -22,6 +22,7 @@ public class DoublyLinkedList {
 
     /**
      * Add an element at the end of the list
+     * 
      * @param e New list element
      */
     public void append(Element e) {
@@ -42,6 +43,7 @@ public class DoublyLinkedList {
 
     /**
      * Create a new element with the provided value and append it to the list
+     * 
      * @param value Value of the new list element
      */
     public void append(double value) {
@@ -50,6 +52,7 @@ public class DoublyLinkedList {
 
     /**
      * Append all elements in the provided list to this list
+     * 
      * @param list The list of which the elements should be appended
      */
     public void append(DoublyLinkedList list) {
@@ -62,7 +65,9 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Create one element per value in the array and append the new elements to this list
+     * Create one element per value in the array and append the new elements to this
+     * list
+     * 
      * @param values Array with values to append
      */
     public void append(double[] values) {
@@ -73,12 +78,13 @@ public class DoublyLinkedList {
 
     /**
      * Create a new array with the elements in this list (in the same order)
+     * 
      * @return Array with list elements (same order)
      */
     public double[] asArray() {
-        double[] array = new double[length+1];
+        double[] array = new double[length];
         Element element = begin;
-        int arrayPos = 1;
+        int arrayPos = 0;
         while (element != null) {
             array[arrayPos] = element.value;
             arrayPos++;
@@ -113,6 +119,7 @@ public class DoublyLinkedList {
 
     /**
      * Checks whether list does not contain any elements
+     * 
      * @return true if list is empty
      */
     public boolean isEmpty() {
@@ -121,6 +128,7 @@ public class DoublyLinkedList {
 
     /**
      * Add an element at the correct position in a sorted list
+     * 
      * @param e Element to insert into the sorted list
      */
     public void insert(Element e) {
@@ -149,29 +157,35 @@ public class DoublyLinkedList {
             }
         }
     }
-
-    /**
-     * Add an element.
-     * @param e Element to add
-     */
+/*
+    
     public void add(Element e) {
-        if (isEmpty()) { append(e); }
-        else {
-            Element pos = begin; Element pred = null;
+        if (isEmpty()) {
+            append(e);
+        } else {
+            Element pos = begin;
+            Element pred = null;
             while (pos != null && pos.getValue() < e.getValue()) {
-                pred = pos; pos = pos.getNext();
+                pred = pos;
+                pos = pos.getNext();
             }
-            if (pos == null) { append(e); }
-            else {
-                e.setNext(pos); pos.setPrev(e);
-                if (pred != null) { e.setPrev(pred); pred.setNext(e); }
-                else { begin = e; }
+            if (pos == null) {
+                append(e);
+            } else {
+                e.setNext(pos);
+                pos.setPrev(e);
+                if (pred != null) {
+                    e.setPrev(pred);
+                    pred.setNext(e);
+                } else {
+                    begin = e;
+                }
                 length++;
             }
         }
     }
-
-    /**
+*/
+    /*
      * Inner class for doubly linked list elements
      */
     @Setter
